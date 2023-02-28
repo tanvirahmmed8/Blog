@@ -105,9 +105,51 @@
                                     <td><?=$social['socialmedia_icon']?></td>
                                     <td><?=$social['socialmedialink']?></td>
                                     <td>
-                                        <!-- <a class="btn btn-secondary" href="admin_logic/socialmedia_edit.php?id=<?=$social['id']?>">Edit</a> -->
-                                       
+                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-center<?=$social['id']?>">Edit</button>
+                                    <div id="modal-center<?=$social['id']?>" class="modal fade" tabindex="-1" aria-labelledby="modal-center-title" style="display: none;" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modal-center-title">Modal title</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div> <!-- // END .modal-header -->
+                                                <div class="modal-body">
+                                                    <form action="admin_logic/socialmedia_update.php?id=<?=$social['id']?>" method="post">
+                                                        <div class="mb-3">
+                                                            <label for="socialmedia_icon" class="form-label">Social Media Icon</label>
+                                                            <input type="text"
+                                                            class="form-control" name="socialmedia_icon" id="socialmedia_icon" value="<?=$social['socialmedia_icon']?>" placeholder="Enter font awesome icon class">
+                                                            <small id="socialmedia_iconHelpId" class="form-text text-muted">EX: fab fa-facebook-f</small>
+                                                            <div class="form-text text-danger">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                        <label for="socialmedialink" class="form-label">Social Media URL</label>
+                                                            <input type="text"
+                                                            class="form-control" name="socialmedialink" id="socialmedialink" value="<?=$social['socialmedialink']?>" placeholder="Enter Your social medea link">
+                                                            <div class="form-text text-danger">
+                                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <button type="submit" class="btn btn-primary">Update</button>
+                                                        </div>
+                                                    </form>
+                                                </div> <!-- // END .modal-body -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                </div> <!-- // END .modal-footer -->
+                                            </div> <!-- // END .modal-content -->
+                                        </div> <!-- // END .modal-dialog -->
+                                    </div>
 
+
+
+                                        <!-- <a class="btn btn-secondary" href="admin_logic/socialmedia_edit.php?id=<?=$social['id']?>">Edit</a> -->
                                         <a class="btn btn-danger" href="admin_logic/socialmedia_delete.php?id=<?=$social['id']?>">Delete</a>
                                     </td>
                                 </tr>

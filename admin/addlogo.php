@@ -40,10 +40,11 @@
                             <div class="col-12">
                                 <label for="<?=$logo['logo_key']?>" class="form-label"><?=ucwords(str_replace("_"," ", $logo['logo_key']))?></label>
                                 <input type="file" class="form-control" name="<?=$logo['logo_key']?>" id="<?=$logo['logo_key']?>" >
+                                <small class="text-muted"><strong>NB:</strong> 144*34 image size require</small>
                             </div>
                         </div>
                         <?php endforeach; ?>
-    
+                        <small class="text-muted mb-3"><strong>NB:</strong>Not require for feb icone</small>
                         <div class="mb-3 row">
                             <div class="col-sm-12">
                                 <button type="submit" class="btn btn-primary">Update</button>

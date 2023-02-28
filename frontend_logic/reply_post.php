@@ -8,6 +8,7 @@ $comment_id = $_POST['comment_id'];
 date_default_timezone_set("Asia/Dhaka");
 $now = date("Y-m-d H:i:s");
 
+if(isset($_POST['namer']) && isset($_POST['emailr']) && isset($_POST['commentr'])){
     include '../include/db.php';
     $db = new DB;
     $table = 'comments';
@@ -31,5 +32,9 @@ $now = date("Y-m-d H:i:s");
         header('location:../blog-single.php?bb='.$blog_id);
         // echo 0;
     }
-
+}else{
+    // $_SESSION["register_error"] = "<strong>Oops !</strong> Something Wrong please try again!";
+    header('location:../blog-single.php?bb='.$blog_id);
+    // echo 0;
+}
     ?>

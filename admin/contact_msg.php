@@ -5,7 +5,7 @@
 
 <div class="app-chat-container">
     <div class="row h-100 m-0">
-        <div class="col-lg-4 py-3 px-0 d-none d-lg-flex flex-column h-100">
+        <div class="col-lg-4 col-md-4 col-sm-12 py-3 px-0 d-lg-flex flex-column h-100">
             <div id="delete_msg"></div>
             <div class="search-form form-control-rounded search-form--light mx-3">
                 <input type="text"
@@ -34,7 +34,7 @@
             </div>
 
         </div>
-        <div class="col-lg-8 full-con-body py-3 px-4 bg-white border-left d-flex flex-column h-100">
+        <div class="col-lg-8 col-md-8 col-sm-12 full-con-body py-3 px-4 bg-white border-left d-flex flex-column h-100">
             
             <div class="border-top pt-3 px-3 text-center">
                 <!-- Click here to <a class="btn btn-link px-0"

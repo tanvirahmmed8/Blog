@@ -45,7 +45,7 @@ require_once 'include/frontend/header.php';
                 <?php $blog_user_id = $blog['user_id'];?>
                 <?php $user_b = $db->select('users', "name,role", null, "id='$blog_user_id' ");?>
                 <span class="post-author"><i class="fa fa-user mr-2"></i><?=$user_b[0]['role']."-".$user_b[0]['name'];?></span>
-                <span><a href="blog-single.php?blog=<?=$blog['blog_uri']?>&bb=<?=$blog['id']?>#com" class="post-comment"><i class="fa fa-comments mr-2"></i><?php $blog_id=$blog['id']; echo $count = $db->countRows('comments',"blog_id=$blog_id");?> Comment</a></span>
+                <span><a href="blog-single.php?blog=<?=$blog['blog_uri']?>&bb=<?=$blog['id']?>#com" class="post-comment"><i class="fa fa-comments mr-2"></i><?php $blog_id=$blog['id']; echo commentCount($db,"blog_id=$blog_id")?> Comment</a></span>
               </div>
               <h2 class="post-title"><a href="blog-single.php?blog=<?=$blog['blog_uri']?>&bb=<?=$blog['id']?>"><?=$blog['title']?></a></h2>
               <div class="post-content">

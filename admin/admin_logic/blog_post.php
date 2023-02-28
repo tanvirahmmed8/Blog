@@ -14,8 +14,8 @@ $filename = $_FILES['image']['tmp_name'];
 if (file_exists($filename)) {
     // echo "The file $filename exists";
 } else {
-    $_SESSION["image_error"] = "Please select an Image";
-    $flag = true;
+    // $_SESSION["image_error"] = "Please select an Image";
+    // $flag = true;
 }
 
 if ($title) {
@@ -43,6 +43,10 @@ if ($short_dec) {
 if (!$cat_id) {    
     $flag = true;
     $_SESSION["cat_id_error"] = "Please Select One Category";
+}
+if ($tag) {    
+    // $flag = true;
+    $_SESSION["old_tag"] = $tag;
 }
 
 

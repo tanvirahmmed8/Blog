@@ -51,6 +51,7 @@
     <!-- App Settings (safe to remove) -->
     <script src="assets/js/app-settings.js"></script>
     <script src="assets/summernote/summernote.min.js"></script>
+    <script src="admin_logic/ourscript.js"></script>
 
 
         
@@ -63,82 +64,18 @@
           });
         });
 
-      function LoadContactMsgs(id){
-        var user_id = $('#ur').val();
-        // console.log(blog_id);
-        $.ajax({
-          url:"admin_logic/contact_msg_load.php",
-          type:"POST",
-          data:{user_id:user_id,id:id},
-          success: function(data){
-              $('.contact-msg-load').html(data);
-              // console.log(data);
-          }
-        });
-		  }
-
-		  LoadContactMsgs();
-
-      function LoadContactMsg(id,user){
-          $.ajax({
-            url:"admin_logic/contact_msg_get.php",
-            type:"POST",
-            data:{id:id,user:user},
-            success: function(data){
-                // console.log(data);
-                LoadContactMsgs(id);
-                $('.full-con-body').html(data);
-            }
-          });
-        }
-         
-
-      function DeleteContactMsg(id){
-        // $('.full-con-body').html("empty!");
-        $.ajax({
-            url:"admin_logic/contact_msg_delete.php",
-            type:"POST",
-            data:{id:id},
-            success: function(data){
-              // $('.full-con-body').html('');
-              LoadContactMsg(null,null);
-             
-              if (data == 1) {
-                $('#delete_msg').html("<div class='alert alert-success alert-dismissible fade show' role='alert'>Massege successfully deleted!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
-              }
-              if (data == 0) {
-                $('#delete_msg').html("<div class='alert alert-danger alert-dismissible fade show' role='alert'>Someting went wrong please try again!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
-              }
-              LoadContactMsgs();
-                
-                
-            }
-          });
-      }
-
-      function RefreshMsg(){ 
-        
-        setTimeout(function() {
-          $('.refresmsgbtn').attr("style","cursor: progress;");
-          $('.refresmsg').html('loop');
-        }, 00);
-        LoadContactMsgs();
-        setTimeout(function() {
-          $('.refresmsg').html("refresh");
-          $('.refresmsgbtn').attr("style","");
-        }, 3000);
-        
-        
-      }
+      
       
 
         </script>
-<style>
+<!-- <style>
   .modal-backdrop {
   position: inherit;
  
 }
-</style>
+</style> -->
+
+
     </body>
 
 </html>

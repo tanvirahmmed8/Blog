@@ -1,6 +1,6 @@
 <?php
 include 'include/db.php';
-// include 'include/myfunction.php';
+include 'include/myfunction.php';
 $db = new DB;
 $phn = $db->select('settings','setting_value',null,"setting_name='phone_number'");
 $email = $db->select('settings','setting_value',null,"setting_name='email_address'");

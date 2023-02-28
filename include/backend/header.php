@@ -3,6 +3,7 @@ session_start();
 $err = false;
 include '../include/component.php';
 include '../include/db.php';
+include '../include/myfunction.php';
 $db = new DB;
 
 date_default_timezone_set("Asia/Dhaka");
