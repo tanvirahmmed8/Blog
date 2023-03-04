@@ -104,7 +104,7 @@ $blog = $db->find('blogs',$b_id);
      <div class="comments"></div>
 
     <div class="reply_error"></div>
-    <div class="comments-form p-5 mt-4">
+    <div class="comments-form p-5 mt-4" id="c-i-d">
         <h3>Leave a comment </h3>
         <p>Your email address will not be published. Required fields are marked *</p>
         

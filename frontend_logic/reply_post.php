@@ -1,5 +1,4 @@
 <?php
-
 $name = $_POST['namer'];
 $email = $_POST['emailr'];
 $comment = htmlentities($_POST['commentr']);
@@ -9,32 +8,37 @@ date_default_timezone_set("Asia/Dhaka");
 $now = date("Y-m-d H:i:s");
 
 if(isset($_POST['namer']) && isset($_POST['emailr']) && isset($_POST['commentr'])){
-    include '../include/db.php';
-    $db = new DB;
-    $table = 'comments';
+    if($name != ""){
+        if($email != ""){
+            if ($comment != "") {
+                include '../include/db.php';
+                $db = new DB;
+                $table = 'comments';
 
-    $query = $db->insert($table,[
-        'name' => $name,
-        'email' => $email,
-        'comment' => $comment,
-        'blog_id' => $blog_id,
-        'parent_id' => $comment_id,
-        'created_at' => $now
-    ]);
-    if ($query) {
-        // $_SESSION["register_success"] = "<strong>$name,</strong> Your account created successfully!";
-        header('location:../blog-single.php?bb='.$blog_id);
-        // echo "msg";
-        // echo 1;
-        
+                $query = $db->insert($table,[
+                    'name' => $name,
+                    'email' => $email,
+                    'comment' => $comment,
+                    'blog_id' => $blog_id,
+                    'parent_id' => $comment_id,
+                    'created_at' => $now
+                ]);
+                if ($query) {
+                    echo 1;
+                    
+                }else{
+                    echo 0;
+                }
+            }else{
+                echo 0;
+            }
+        }else{
+            echo 0;
+        }
     }else{
-        // $_SESSION["register_error"] = "<strong>Oops !</strong> Something Wrong please try again!";
-        header('location:../blog-single.php?bb='.$blog_id);
-        // echo 0;
+        echo 0;
     }
 }else{
-    // $_SESSION["register_error"] = "<strong>Oops !</strong> Something Wrong please try again!";
-    header('location:../blog-single.php?bb='.$blog_id);
-    // echo 0;
+    echo 0;
 }
     ?>
