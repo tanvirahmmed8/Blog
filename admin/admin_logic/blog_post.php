@@ -1,6 +1,6 @@
 <?php
 session_start();
-$title = $_POST['title'];
+$title = htmlentities($_POST['title'], ENT_QUOTES);
 $blog = htmlentities($_POST['blog'], ENT_QUOTES);
 $short_dec = htmlentities($_POST['short_dec'], ENT_QUOTES);
 $cat_id = $_POST['cat_id'];
@@ -84,9 +84,16 @@ if ($flag) {
             $_SESSION["insert_success"] = "<strong>Blog,</strong> inserted successfully!";
             header('location:../blog.php');
         }else{
-            $_SESSION["insert_error"] = "<strong>Oops !</strong> Image not updated!";
+            $_SESSION["insert_error"] = "<strong>Blog Inserted!</strong> without Image!";
             header('location:../blog.php');
         }
+        //with out img
+        $_SESSION["old_title"] = "";
+        $_SESSION["old_blog"] = ""; 
+        $_SESSION["old_short_dec"] = ""; 
+        $_SESSION["old_tag"] = "";
+        //with out img
+
     }else{
         $_SESSION["insert_error"] = "<strong>Oops !</strong> Something Wrong please try again!";
             header('location:../blog.php');

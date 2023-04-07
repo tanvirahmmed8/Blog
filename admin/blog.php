@@ -41,7 +41,7 @@
                             <div class="mb-3">
                                 <label for="title" class="form-label">Title</label>
                                 <input type="text"
-                                    class="form-control" name="title" id="title" value="<?=isset($_SESSION['old_title'])?>" placeholder="Blog Title">
+                                    class="form-control" name="title" id="title" value="<?=(isset($_SESSION['old_title'])) ? $_SESSION['old_title']:"" ?>" placeholder="Blog Title">
                                 <div class="form-text text-danger">
                                     <?php
                                     if (isset($_SESSION['title_error'])) {
@@ -54,7 +54,7 @@
                             <div class="mb-3">
                                 <label for="blog" class="form-label">Blog Decsription</label>
                                 <textarea id="summernote" type="text"
-                                    class="form-control" name="blog" placeholder="Blog Decsription"><?=isset($_SESSION['old_blog'])?></textarea>
+                                    class="form-control" name="blog" placeholder="Blog Decsription"><?= (isset($_SESSION['old_blog'])) ? $_SESSION['old_blog']:""?></textarea>
 
                                     <div class="form-text text-danger">
                                     <?php
@@ -71,7 +71,7 @@
                             <div class="mb-3">
                                 <label for="short_dec" class="form-label">Short Decsription</label>
                                 <textarea id="short_dec" type="text"
-                                    class="form-control" name="short_dec" placeholder="Short Decsription"><?=isset($_SESSION['old_short_dec'])?></textarea>
+                                    class="form-control" name="short_dec" placeholder="Short Decsription"><?= (isset($_SESSION['old_short_dec'])) ? $_SESSION['old_short_dec']:""?></textarea>
 
                                     <div class="form-text text-danger">
                                     <?php
@@ -115,7 +115,7 @@
                             <div class="mb-3">
                                 <label for="tag" class="form-label">Tag (Separated by comma without space)</label>
                                 <input type="text"
-                                    class="form-control" name="tag" value="<?=isset($_SESSION['old_tag'])? $_SESSION['old_tag']:""?>" id="tag" placeholder="Add Tags">
+                                    class="form-control" name="tag" value="<?=(isset($_SESSION['old_tag']))? $_SESSION['old_tag']:""?>" id="tag" placeholder="Add Tags">
                                 <div class="form-text text-danger">
                                     <?php
                                     if (isset($_SESSION['tag_error'])) {

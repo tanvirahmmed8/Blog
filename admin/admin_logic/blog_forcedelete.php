@@ -3,9 +3,14 @@ session_start();
 $id = $_GET['blog'];
 
 if ($id) {
+
     include '../../include/db.php';
     $db = new DB;
     $table = 'blogs';
+    $img = $db->find($table,$id,"image");
+    if ($img['image'] != "") {
+        unlink("../../uploads/blog_photos/".$img['image']);
+    }
     $query = $db->delete($table, "id=$id");
     // $query = false;
 
